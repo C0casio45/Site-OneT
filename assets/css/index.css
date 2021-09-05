@@ -1,0 +1,103 @@
+@import "root.css";
+
+section{
+    display: flex;
+    margin:2em 7em;
+}
+
+.content{
+    width:100%;
+    text-align: center;
+}
+
+section h1{
+    font-size:3em;
+    text-align: center;
+}
+
+section p{
+    font-size: 1.5em;
+}
+
+section ul{
+    list-style-type: none;
+    display: flex;
+    margin:0;
+    padding: 0;
+}
+
+section li{
+    width: 100%;
+    font-size: 5em;
+}
+
+section svg{
+    height:1.4em;
+}
+
+.items a{
+    color:grey;
+    transition: all .5s ease-out;
+}
+
+#discord a:hover{
+    color:#7289da;
+}
+
+#twitter a:hover{
+    color:#2dace6;
+}
+
+#ts a:hover{
+    color:#287fc2;
+}
+
+#steam a{
+    background: grey;
+                -webkit-text-fill-color: transparent; 
+                -webkit-background-clip: text; 
+                background-clip: text; 
+    transition: all .5s ease-out;
+}
+
+#steam a:hover{
+    color:transparent !important;
+    background:linear-gradient(#0d1d2f,#1474a4);
+                -webkit-text-fill-color: transparent; 
+                -webkit-background-clip: text; 
+                background-clip: text; 
+}
+
+#faceit a{
+    padding:15px 0px;
+    margin-left:-25px;
+}
+
+#faceit svg path{
+    fill:grey;
+    transition: all .5s ease-out;
+}
+
+#faceit a:hover svg path{
+    fill:#F50;
+}
+
+section div:nth-child(2){
+    display: none;
+}
+
+@media screen and (min-width:1400px) {
+    h1{
+        font-size: 5em;
+    }
+    section h1,section p{
+        
+        text-align:left !important;
+    }
+    section div:nth-child(2){
+        display: block;
+    }
+    img{
+        height:40em;
+    }
+}

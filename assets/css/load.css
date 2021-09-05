@@ -1,0 +1,97 @@
+body{
+    overflow-x: hidden;
+}
+
+#loader-wrapper{
+    position: absolute;
+    top:0;left:0;
+    height:100vh;
+    width:100vw;
+}
+
+.loader-section{
+    position: absolute;
+    top:0;
+    
+    z-index: 1000;
+
+    height:100vh;
+    width:50vw;
+
+    background-color: azure;
+}
+
+.section-left{
+    left:0;
+    animation: left 1.5s;
+}
+
+.section-right{
+    right:0;
+    animation: right 1.5s;
+}
+
+#loader-wrapper svg{
+    height:100vh;
+    width:30rem;
+    position: absolute;
+    z-index: 1001;
+    top:50%;left:50%;
+    transform: translate(-50%,-50%);
+}
+
+#circle{
+    animation: fadedown 1s;
+}
+
+#O{
+    animation: fadedown 1s;
+}
+
+#N{
+    animation: fadeup 1s;
+}
+
+#E{
+    animation: fadedown 1s;
+}
+
+#T{
+    animation: fadeup 1s;
+}
+
+@keyframes fadedown{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(300%);
+    }
+}
+
+@keyframes fadeup{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+    100%{
+        transform: translateY(-300%);
+    }
+}
+
+@keyframes left{
+    50%{transform: translateX(0%);}
+    100%{transform: translateX(-200%);}
+}
+
+@keyframes right{
+    50%{transform: translateX(0%);}
+    100%{transform: translateX(200%);}
+}

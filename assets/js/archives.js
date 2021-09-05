@@ -1,0 +1,101 @@
+httpRequest = new XMLHttpRequest();
+
+if (!httpRequest) {
+    alert('Abandon :( Impossible de créer une instance de XMLHTTP');
+}
+
+httpRequest.onreadystatechange = loadTicket;
+httpRequest.open('POST', 'assets/php/ticket_all.php');
+httpRequest.send();
+
+function loadTicket() {
+    
+    if (httpRequest.readyState == 0){
+        console.log("Envoie en cours");
+    } else if (httpRequest.readyState == 1) {
+        console.log("En attente du serveur");
+    } else if (httpRequest.readyState == 2){
+        console.log("Réception des premiers éléments");
+    } else if (httpRequest.readyState == 3){
+        console.log("Chargement en cours");
+    } else if (httpRequest.readyState == 4) {
+        if (httpRequest.status === 200) {
+            let resultat = JSON.parse(httpRequest.responseText);
+            resultat.forEach(element => {
+                affTicket(element,"finished");
+                
+            });
+            return;
+        } else {
+            document.getElementById("finished").innerHTML += "<article>Il n'y a pas de nouveaux tickets.</article>";
+            return
+        }
+    } else {
+        console.log("Erreur de httpRequest, essayez de mettre a jour votre navigateur ou d'en changer.");
+    }
+}
+
+function affTicket(rst,id){
+    document.getElementById(id).innerHTML += `
+    <div class="ticket" idt="`+rst.idTicket+`">
+        <div>
+        <p>Créé par : `+rst.username+`</p>
+        <p>Créé le : `+timeTranslator(rst.Ouverture)+`</p>
+        <p>Type : `+rst.Type+`</p>
+        </div>
+        <a class="take" href="ticket_page.php?id=`+rst.idTicket+`" target="_blank">Voir</a>
+        <div>
+            <span class="down" onclick="affMore(this,'u');">˅</span>
+            <span onclick="affMore(this,'d');">˄</span>
+        </div>
+        <div class="more">
+            <p>Lien de la Game : <a href="`+rst.FaceitGame+`" target="_blank">`+rst.FaceitGame+`</a></p>
+            `+cutPeople(rst.Accuse,rst.LienAccuse)+`</p></br>
+            <p>Message :</p>
+            <p>`+rst.content+`</p>
+        </div>
+    </div>`;
+}
+
+function timeTranslator(time){
+    var dateStr=time;
+    var a=dateStr.split(" ");
+    var d=a[0].split("-");
+    var t=a[1].split(":");
+    return d[0]+'/'+(d[1]-1)+'/'+d[2]+' à '+ t[0]+':'+t[1]+':'+t[2]
+}
+
+function cutPeople(strPseudo, strLink){
+    let arrPseudo = strPseudo.split(",");
+    let len = arrPseudo.length
+    let arrLink = strLink.split(",");
+    let arr = "";
+    if(len > 1){
+        st = "<p>Pseudo des joueur : "
+    } else {
+        st = "<p>Pseudo du joueur : "
+    }
+    for(let i = 0; i < len; i++){
+        arr += `<a href="`+arrLink[i]+`" target="_blank">`+arrPseudo[i]+`</a> `;
+    }
+    return st + arr;
+}
+
+function affMore(e,v){
+    let thidm = e.parentNode.parentNode;
+    let thid = e.parentNode;
+    switch (v) {
+        case "u":
+            thid.lastElementChild.style.display="block";
+            thid.firstElementChild.style.display="none";
+            thidm.lastElementChild.style.display="none";
+            break;
+        case "d":
+            thid.lastElementChild.style.display="none";
+            thid.firstElementChild.style.display="block";
+            thidm.lastElementChild.style.display="block"; 
+            break;
+        default:
+            break;
+    }
+}

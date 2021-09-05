@@ -1,0 +1,109 @@
+@import "root.css";
+
+input,label{
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+    box-sizing:content-box;
+    display: block;
+    width: 20rem;
+    margin: auto;
+}
+
+input{
+    padding:1em;
+    border-radius: 10px;
+    border:none;
+}
+
+input[type=text], input[type=password], input[type=email]{
+    box-shadow: 2px 2px var(--background-bis);
+}
+
+input[type=reset]:hover, input[type=submit]:hover{
+    background: hsl(0, 0%, 70%);
+}
+input[type=reset]:active, input[type=submit]:active{
+    background: hsl(0, 0%, 50%);
+}
+
+#switch{
+    width:400px;
+    margin:7em auto 2em auto;
+    background: #dbaba5;
+    border-radius: 20px;
+    white-space: nowrap;
+    position:relative;
+    height:3em;
+}
+
+#switch a{
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-size: 1em;
+    width:50%;
+    margin:0;
+    padding:1em 0;
+    cursor:pointer;
+}
+
+#box{
+    position: absolute;
+    background: var(--gradient);
+    border-radius: 20px;
+    width:50%;
+    height:100%;
+    top:0;left:0;
+}
+
+.txt{
+    position:absolute;
+    top:0;left:0;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    z-index: 100;
+    user-select: none;
+}
+
+.current{
+    color:white !important;
+}
+
+#switch a:nth-child(1){
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+#switch a:nth-child(2){
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#Sign_in span{
+    display:flex;
+    width:20em;
+    margin:0 auto;
+}
+
+@media screen and (min-width:800px) {
+    input,label{
+        width:40rem;
+    }
+
+    #switch{
+        width:650px;
+    }
+
+    #switch a{
+        width:323px;
+    }
+
+    #switch a:hover{
+        background: #e34c3b;
+        color:white;
+    }
+}
+

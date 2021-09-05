@@ -1,0 +1,96 @@
+@import "root.css";
+
+h2{
+    text-align: center;
+    font-size: 2em;
+    margin-top: 5rem;
+}
+
+p{
+    text-align: center;
+    margin:0 auto;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    
+    width: 100%;
+    margin: 3rem 0;
+}
+
+input,label,textarea,select{
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    -webkit-box-sizing:content-box; 
+    box-sizing:content-box;
+    display: block;
+    margin: .5em auto;
+    width: 30rem;
+}
+
+select{
+    padding:1em;
+    border:none;
+}
+
+input,textarea{
+    padding:1em;
+    border-radius: 10px;
+    border:none;
+}
+
+.qct{
+    font-size: 2em;
+    margin-top: 7rem;
+}
+
+input[type=submit]:active{
+    background: hsl(0, 0%, 50%);
+}
+input[type=reset]:active{
+    background: hsl(0, 0%, 50%);
+}
+
+input[type=reset]:active{
+    background: hsl(0, 0%, 50%);
+}
+
+.accuse{
+    position: relative;
+    display: flex;
+}
+
+.add,.remove{
+    text-decoration: none;
+    background: linear-gradient(45deg,#e34c3b,#af4c82);
+    color:white;
+    height:2.7rem;
+    width:2.7rem;
+    position:absolute;
+    left:calc(50% + 16.5rem); top:6px;
+    display: block;
+    text-align: center;
+    line-height: 2.7rem;
+    border-radius: 100%;
+}
+
+.add:active,.remove:active{
+    opacity: 50%;
+}
+
+.bt{
+    position: absolute;
+    top:9em;left:3em;
+    font-size: 1em;
+    display:block;
+    text-align: center;
+    text-decoration: none;
+    background: linear-gradient(45deg,#e34c3b,#af4c82);
+    padding: .6em;
+    border-radius: 7px;
+    width:8em;
+    margin:1em auto 0 auto;
+    box-shadow: 5px 5px 4px rgba(0, 0, 0, .2);
+    color:black;
+}

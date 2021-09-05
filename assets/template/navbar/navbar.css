@@ -1,0 +1,168 @@
+@import "../../css/root.css";
+
+body{
+    margin: 0;
+    padding: 0;
+    min-width: 900px;
+    background-color: var(--background-current);
+    color:var(--color-current);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+}
+
+figure{
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+}
+
+ul {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+}
+
+#logo{
+    height:7rem;
+}
+
+.hmbr, .isconnected, #isconnected{
+    display:none;
+}
+
+#menu{
+    display: flex;
+    flex-direction: row;
+}
+
+#menu li{
+    list-style-type: none;
+}
+
+#menu a{
+    display: block;
+    text-decoration: none;
+    color:black;
+    text-align: center;
+    position: relative;
+    font-size: 2em;
+    padding:1em;
+}
+
+#menu a::after{
+    content: " ";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 69px;
+    background: var(--gradient);
+    height:3px;
+    width:20px;
+    opacity: 0%;
+    transition: opacity .5s ease-in-out;
+}
+
+
+#menu a:hover::after{
+    opacity: 100%;
+}
+
+.current::after{
+    opacity: 100% !important;
+    width:60px !important;
+}
+
+#btsn{
+    position:absolute;
+    top:20px;
+    right:20px;
+}
+
+#btsn a{
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+#btsn a:nth-child(1){
+    color: var(--color-current);
+    padding:calc(1.1rem - 2px);
+    position: relative;
+    border: 2px solid transparent;
+    background: var(--background-current);
+    background-clip: padding-box;
+}
+
+#btsn a:nth-child(1)::after {
+    position: absolute;
+    top: -2px; bottom: -2px;
+    left: -2px; right: -2px;
+    background: var(--gradient);
+    content: '';
+    z-index: -1;
+    border-radius: 10px;
+}
+
+#btsn a:nth-child(2){
+    background: var(--gradient);
+    color:var(--background-current);
+    padding:1.1rem;
+}
+
+#signed{
+    position:absolute;
+    top:0;
+    right:0;
+    display: flex;
+    margin:10px;
+}
+
+#signed img{
+    height:5em;
+}
+
+#signed figcaption{
+    text-align: center;
+}
+
+#btsc a{
+    display: block;
+    text-decoration: none;
+    background: var(--gradient);
+    color: var(--background-current);
+    padding:.5rem;
+    border-radius: 7px;
+    margin: 7px 7px 0 0;
+}
+
+#popup{
+    position: absolute;
+    background-color: var(--background-current);
+    color: var(--color-current);
+    top:50%; left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    padding: 1em;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+@media screen and (max-width:1200px) {
+    figure{
+        display: none;
+    }
+}
+
+@media screen and (max-width:1110px) {
+    #menu a{
+        font-size: 1.5rem;
+    }
+}

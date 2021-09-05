@@ -1,0 +1,178 @@
+@import "../../css/root.css";
+
+body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: var(--background-current);
+    color: var(--color-current);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+  
+#logo,#profil{
+    display:none;
+}
+  
+#select{
+    margin-top:15px;
+}
+   
+#menuToggle{
+    display: block;
+    position: relative;
+    top: 50px;
+    left: 50px;
+
+    z-index: 100;
+        
+    -webkit-user-select: none;
+    user-select: none;
+}
+   
+#menuToggle a{
+    text-decoration: none;
+    color: var(--color-light); /*old #d1cfcf*/
+  
+    transition: color 0.3s ease;
+}
+  
+#menuToggle a:hover{
+    color: var(--color-light); /*old #d1cfcf*/
+}
+  
+  
+#menuToggle input{
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    
+    cursor: pointer;
+    
+    opacity: 0;
+    z-index: 2;
+    
+    -webkit-touch-callout: none;
+}
+  
+#menuToggle span{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    
+    background: var(--gradient);
+    border-radius: 3px;
+    
+    z-index: 1;
+    
+    transform-origin: 4px 0px;
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+}
+  
+#menuToggle span:first-child{
+    transform-origin: 0% 0%;
+}
+  
+#menuToggle span:nth-last-child(2){
+    transform-origin: 0% 100%;
+}
+  
+#menuToggle input:checked ~ body{
+    overflow: hidden;
+}
+  
+#menuToggle input:checked ~ span{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: var(--gradient);
+}
+  
+#menuToggle input:checked ~ span:nth-last-child(3){
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+  
+#menuToggle input:checked ~ span:nth-last-child(2){
+    transform: rotate(-45deg) translate(0, -1px);
+}
+  
+  
+#menu{
+    position: absolute;
+    width: 100%;
+    height:84.3vh;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+    
+    background: #0B0D22;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+  
+#menu li{
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#menu .isconnected a{
+    color:#8a90ee;
+}
+
+#menu #isconnected{
+    color:#8a90ee;
+}
+  
+#menuToggle input:checked ~ ul{
+    transform: none;
+}
+
+#logomin{
+    width:30vw;
+    margin:0 50%;
+    transform: translateX(-50%);
+}
+  
+#qcq{
+    text-align: center;
+}
+  
+#qcq h1{
+     font-size: 20em;
+     font-weight: bolder;
+     font-family: 'Chela One', cursive;
+     text-shadow: 7px 7px #8a90ee;
+}
+  
+#qcq h2{
+     font-size: 4em;
+}
+
+#btsn, #signed{
+    display:none;
+}
+
+#popup{
+    position: absolute;
+    background-color: var(--background-current);
+    color: var(--color-current);
+    top:50%; left:50%;
+    transform: translate(-50%,-50%);
+    z-index: 2;
+    padding: 1em;
+    border-radius: 20px;
+    border: 1px solid black;
+}

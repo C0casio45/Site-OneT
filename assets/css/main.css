@@ -1,0 +1,28 @@
+@import "root.css";
+
+.qcq{
+    text-align: center;
+}
+.qcq h1{
+    font-size: 4em;
+    margin:4em 0 0 0;
+    padding: 0;
+}
+
+.qcq p{
+    font-size: 2em;
+}
+
+p{
+    max-width: 75ch;
+}
+
+@media screen and (min-width:800px) {
+    .qcq h1{
+        font-size: 10em;
+    }
+    
+    .qcq p{
+        font-size: 5em;
+    }
+}

@@ -1,0 +1,46 @@
+@import "../../css/root.css";
+
+body {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+footer {
+    padding-top: 1.8em;
+    flex-shrink: 0;
+    line-height: 30px;
+    width:100%;
+    height:100px;
+    text-align: center;
+    background: var(--gradient);
+    font-size: 1em;
+}
+
+footer p{
+    margin:0 auto;
+}
+
+footer a{
+    color: var(--background-current);
+    text-decoration: none;
+}
+
+@media screen and (min-width:800px) {
+    footer{
+        padding: 0;
+        font-size: 1em;
+        line-height: 75px;
+        height:75px;
+    }
+}
+
+@media screen and (min-width:1400px) {
+    footer{
+        font-size: 1.4em;
+    }
+}

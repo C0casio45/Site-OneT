@@ -1,0 +1,36 @@
+@import "root.css";
+
+section{
+    margin-top:10rem;
+}
+
+section p{
+    margin:1em auto 0 auto;
+}
+
+section p:nth-child(3), section a{
+    text-align: center;
+    display: block;
+}
+
+section ul{
+    margin:1em auto 0 auto;
+    max-width: 75ch;
+    padding-left:3em;
+}
+
+section a{
+    font-size: 3em;
+}
+
+@media screen and (min-width:1200px){
+    section a{
+        font-size: 5em;
+    }
+    section p{
+        font-size: 1.5em;
+    }
+    section ul{
+        font-size: 1.5em;
+    }
+}

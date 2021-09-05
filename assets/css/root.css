@@ -1,0 +1,10 @@
+:root {
+    --background-light: #dee6e6;
+    --background-dark: #171a2b;
+    --color-light: #171a2b;
+    --color-dark: white;
+    --background-current:#dee6e6;
+    --background-bis:#b7bdbd;
+    --color-current:black;
+    --gradient : linear-gradient(45deg,#e34c3b,#af4c82);
+}
